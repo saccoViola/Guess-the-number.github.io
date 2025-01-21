@@ -5,7 +5,7 @@ let checkButton = document.getElementById("check");
 let tip = document.getElementById("tip");
 let attempts = document.getElementById("attempts");
 let gameCore = document.getElementById("game-core");
-let numberAttempts = 10;
+let numberAttempts = 5;
 
 checkButton.addEventListener("click", ()=>{
     tip.style.display = "block";
@@ -17,10 +17,10 @@ checkButton.addEventListener("click", ()=>{
     }
 
     if(userInput.value < numberToGuess){
-        tip.innerHTML = "your number is low";  
+        tip.innerHTML = "Your number is lower";  
     }
     else if (userInput.value > numberToGuess){
-        tip.innerHTML = "your number is high";
+        tip.innerHTML = "Your number is higher";
         
     }
     else{
