@@ -1,0 +1,32 @@
+body{
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #000000;
+    background-image: radial-gradient(#4a1158, #041607);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'ConsolaMonoBook', Helvetica, sans-serif;
+    color: rgba(234, 128, 255, 0.8);
+    text-shadow: 0 0 2px #ff33ee, 0 0 2px rgba(255, 255, 255, 0.8);
+    line-height: 50px;
+}
+.main-container{
+    width: 40%;
+    margin: auto;
+    height: 650px;
+    padding: 100px;
+}
+
+/* .tip{
+    display:none;
+} */
+
+button{
+    background-color: rgba(234, 128, 255, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px #041607;
+    cursor: pointer;
+}
+
