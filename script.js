@@ -37,7 +37,6 @@ function submit() {
     titolo.style.display = "block";
 
     if (userInput.value > 100 || userInput.value <= 0){
-        errorMessage()
         tip.innerHTML = `You need to pick a number between 1 and 100`; 
     }
     
