@@ -18,6 +18,7 @@ titolo.style.display = "none";
 checkButton.addEventListener("click", ()=>{
     tip.style.display = "block";
     titolo.style.display = "block";
+    userInput.value === "";
 
     if (userInput.value > 100 || userInput.value <= 0){
         tip.innerHTML = `You need to pick a number between 1 and 100`; 
@@ -57,7 +58,7 @@ function youLost() {
     if (numberAttempts == 0){
         attempts.innerHTML = "You lost";
         gameCore.style.display = "none";
-        tip.style.display = "none";
+        tip.innerHTML = `The number to guess was ${numberToGuess}`;
         titolo.style.display = "none";
         picks.style.display = "none";
         restart()
