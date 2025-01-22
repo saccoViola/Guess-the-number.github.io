@@ -6,21 +6,38 @@ let tip = document.getElementById("tip");
 let attempts = document.getElementById("attempts");
 let gameCore = document.getElementById("game-core");
 let picks = document.getElementById("picks");
+let titolo = document.getElementById("selected");
+
 let numberAttempts = 5;
 
-let titolo = document.getElementById("selected");
 titolo.style.display = "none";
 
-
+let restartButton = document.createElement("button");
 
 // let userGuess = parseInt(userInput.value);
 
 checkButton.addEventListener("click", ()=>{
+   submit()
+})
+
+userInput.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        submit();
+    }
+})
+
+restartButton.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        restart();
+    }
+})
+
+function submit() {
     tip.style.display = "block";
     titolo.style.display = "block";
-    userInput.value === "";
 
     if (userInput.value > 100 || userInput.value <= 0){
+        errorMessage()
         tip.innerHTML = `You need to pick a number between 1 and 100`; 
     }
     
@@ -39,10 +56,11 @@ checkButton.addEventListener("click", ()=>{
         youWon()
     }
     youLost()
+    userInput.value = "";
     
     
     
-})
+}
 
 function youWon() {
         tip.innerHTML = "You guessed right!";
@@ -73,17 +91,22 @@ function numberSelected() {
 }
 
 function restart() {
-    let restartButton = document.createElement("button");
     restartButton.innerHTML = "Riprova!";
     restartButton.style.marginLeft = "40px"
     attempts.appendChild(restartButton);
     restartButton.addEventListener("click", ()=>{
         location.reload()
     })
+
 }
 
 function showAttempts() {
     numberAttempts --;
     attempts.innerHTML = `You still have ${numberAttempts} attempts`; 
     titolo.style.display = "none";
+}
+
+function errorMessage() {
+    userInput.classList.add("error-message");
+
 }

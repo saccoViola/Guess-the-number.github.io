@@ -18,15 +18,43 @@ body{
 }
 
 button{
-    background-color: rgba(234, 128, 255, 0.8);
+    background-color: rgb(138 98 182 / 80%);
+    /* background-color: rgba(234, 128, 255, 0.8); */
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     border: solid 2px #041607;
     cursor: pointer;
+    box-shadow: 0 0 2px #333aff, 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 .selected-numbers{
     font-size: 14px;
 }
 
+.number-input{
+    padding:7px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #333aff, 0 0 2px rgba(255, 255, 255, 0.8);
+} 
+
+.error-message{
+    background-color: rgb(169, 73, 73);
+    transition-duration: 3s,1s;
+}
+
+@media (max-width: 600px){
+    .main-container{
+        width: 70%;
+        padding:50px;   
+    }
+    h1{
+        font-size: 24px;
+    }
+    .tip{
+        margin-top:20px;
+        margin-bottom:20px;
+        font-size:14px;
+    }
+}
