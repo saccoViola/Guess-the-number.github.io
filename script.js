@@ -1,5 +1,4 @@
-let numberToGuess = Math.floor(Math.random()*(100));
-
+//getting elements from DOM
 let userInput = document.getElementById("user-input");
 let checkButton = document.getElementById("check");
 let tip = document.getElementById("tip");
@@ -8,13 +7,22 @@ let gameCore = document.getElementById("game-core");
 let picks = document.getElementById("picks");
 let titolo = document.getElementById("selected");
 
+//number to guess
+let numberToGuess = Math.floor(Math.random()*(100));
+
+//creating a button to restart the game
+let restartButton = document.createElement("button");
+restartButton.setAttribute("tabindex", "0");
+
+restartButton.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+        location.reload();
+    }
+})
+
 let numberAttempts = 5;
 
 titolo.style.display = "none";
-
-let restartButton = document.createElement("button");
-
-// let userGuess = parseInt(userInput.value);
 
 checkButton.addEventListener("click", ()=>{
    submit()
@@ -26,11 +34,7 @@ userInput.addEventListener("keypress", function(e){
     }
 })
 
-restartButton.addEventListener("keypress", function(e){
-    if(e.key === "Enter"){
-        restart();
-    }
-})
+
 
 function submit() {
     tip.style.display = "block";
@@ -41,12 +45,12 @@ function submit() {
     }
     
     else if(userInput.value < numberToGuess){
-        tip.innerHTML = `You picked ${userInput.value} ,this numer is lower than the one you have to guess`; 
+        tip.innerHTML = `You picked ${userInput.value}, try with a <b>higher</b> number`; 
         numberSelected() 
         showAttempts()
     }
     else if (userInput.value > numberToGuess){
-        tip.innerHTML = `You picked ${userInput.value} ,this numer is higher than the one you have to guess`;
+        tip.innerHTML = `You picked ${userInput.value}, try with a <b>lower</b> number`;
         numberSelected()
         showAttempts()
         
@@ -73,7 +77,7 @@ function youWon() {
 
 function youLost() {
     if (numberAttempts == 0){
-        attempts.innerHTML = "You lost";
+        attempts.innerHTML = "You lost :(";
         gameCore.style.display = "none";
         tip.innerHTML = `The number to guess was ${numberToGuess}`;
         titolo.style.display = "none";

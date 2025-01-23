@@ -44,6 +44,11 @@ button{
     transition-duration: 3s,1s;
 }
 
+b{
+    font-size: 18px;
+    color: #fff;
+}
+
 @media (max-width: 600px){
     .main-container{
         width: 70%;
@@ -56,5 +61,8 @@ button{
         margin-top:20px;
         margin-bottom:20px;
         font-size:14px;
+    }
+    #check{
+        margin-top: 20px;
     }
 }
