@@ -1,11 +1,11 @@
 //getting elements from DOM
-let userInput = document.getElementById("user-input");
-let checkButton = document.getElementById("check");
-let tip = document.getElementById("tip");
-let attempts = document.getElementById("attempts");
-let gameCore = document.getElementById("game-core");
-let picks = document.getElementById("picks");
-let titolo = document.getElementById("selected");
+const userInput = document.getElementById("user-input");
+const checkButton = document.getElementById("check");
+const tip = document.getElementById("tip");
+const attempts = document.getElementById("attempts");
+const gameCore = document.getElementById("game-core");
+const  picks = document.getElementById("picks");
+let attemptedShowed = document.getElementById("selected");
 
 //number to guess
 let numberToGuess = Math.floor(Math.random()*(100));
@@ -22,7 +22,7 @@ restartButton.addEventListener("keydown", function(e){
 
 let numberAttempts = 5;
 
-titolo.style.display = "none";
+attemptedShowed.style.display = "none";
 
 checkButton.addEventListener("click", ()=>{
    submit()
@@ -38,7 +38,7 @@ userInput.addEventListener("keypress", function(e){
 
 function submit() {
     tip.style.display = "block";
-    titolo.style.display = "block";
+    attemptedShowed.style.display = "block";
 
     if (userInput.value > 100 || userInput.value <= 0){
         tip.innerHTML = `You need to pick a number between 1 and 100`; 
@@ -68,7 +68,7 @@ function submit() {
 function youWon() {
         tip.innerHTML = "You guessed right!";
         attempts.innerHTML = "You won!";
-        titolo.style.display = "none";
+        attemptedShowed.style.display = "none";
         picks.style.display = "none";
         gameCore.style.display = "none";
         restart()
@@ -80,7 +80,7 @@ function youLost() {
         attempts.innerHTML = "You lost :(";
         gameCore.style.display = "none";
         tip.innerHTML = `The number to guess was ${numberToGuess}`;
-        titolo.style.display = "none";
+        attemptedShowed.style.display = "none";
         picks.style.display = "none";
         restart()
     }
@@ -106,7 +106,7 @@ function restart() {
 function showAttempts() {
     numberAttempts --;
     attempts.innerHTML = `You still have ${numberAttempts} attempts`; 
-    titolo.style.display = "none";
+    attemptedShowed.style.display = "none";
 }
 
 function errorMessage() {
