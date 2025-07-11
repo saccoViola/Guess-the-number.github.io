@@ -8,19 +8,23 @@
     <title>Guess the number</title>
 </head>
 <body>
-    <div class="main-container">
-        <h1>GUESS THE RANDOM NUMBER BETWEEN 1 AND 100</h1>
+    <main class="main-container">
+        <div class="language-switcher" id="language-selector">
+            <button value="en">English</button>
+            <button value="it">Italiano</button>
+          </div>
+        <h1 id="title" data-i18n="title">GUESS THE RANDOM NUMBER BETWEEN 1 AND 100</h1>
         <p class="tip" id="tip"></p>
         <div id="game-core">
             <input class="number-input" id="user-input" type="number">
-            <button id="check">CHECK</button>
+            <button id="check" data-i18n="check">CHECK</button>
         </div>
         <p id="attempts"></p>
-        <h2 class="selected-numbers" id="selected">You selected the following numbers:</h2>
+        <h2 class="selected-numbers" id="show-attempts" data-i18n="selectedNumbers">You selected the following numbers:</h2>
         <ul id="picks">
 
         </ul>
-    </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
