@@ -94,7 +94,7 @@ function numberSelected() {
 }
 
 function restart() {
-    restartButton.innerHTML = "Riprova!";
+    restartButton.innerHTML = "Try again";
     restartButton.style.marginLeft = "40px"
     attempts.appendChild(restartButton);
     restartButton.addEventListener("click", ()=>{
